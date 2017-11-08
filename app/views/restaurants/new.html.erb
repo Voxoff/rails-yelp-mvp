@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Add a restaurant</h1>
+
+  <%= simple_form_for(@restaurant) do |f| %>
+    <% if @restaurant.errors.any? %>
+      <div class="errors-container" style="border: dashed red 2px">
+        <ul>
+          <% @restaurant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <hr>
+    <% end %>
+
+    <%= f.input :name, :input_html => {:maxlength =>2,:style=> 'width: 500px'} %>
+
+    <%= f.input :address, :input_html => {:maxlength =>2,:style=> 'width: 500px'} %>
+
+    <%= f.input :category, :input_html => {:maxlength =>2,:style=> 'width: 500px'}%>
+
+    <%= f.input :phone_number, :input_html => {:maxlength =>2,:style=> 'width: 500px'} %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
+

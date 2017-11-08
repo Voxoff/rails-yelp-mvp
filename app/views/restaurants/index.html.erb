@@ -1,5 +1,5 @@
 <%= render "layouts/navbar.html.erb" %>
-
+<div class="container">
 <h1>And the geeks shall inherit the earth</h1>
 
 
@@ -8,3 +8,7 @@
   <li> <%= link_to restaurant.name, restaurant_path(restaurant) %></li>
 <% end %>
 </ul>
+
+
+<%= link_to "New", new_restaurant_path, class: "btn btn-primary" %>
+</div>

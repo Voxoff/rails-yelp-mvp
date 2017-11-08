@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # post 'restaurants', to: 'restaurants#creationte'
   resources :restaurants do
-    resources :reviews
+    resources :reviews, except: [:index]
   end
   root to: 'restaurants#index'
 end

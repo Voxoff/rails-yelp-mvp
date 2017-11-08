@@ -1,5 +1,5 @@
-<%= render "navbar.html.erb" %>
-
+<%= render "layouts/navbar.html.erb" %>
+<div class="container">
 <h1>This be your pad</h1>
 
 <%= @restaurant.name %>
@@ -7,6 +7,19 @@
 <p>Located over here: <%= @restaurant.address %></p>
 
 
-<p>Multi culturalism isn't all bad,eh? <%= @restaurant.category %></p>
+<p>Nationality: <%= @restaurant.category %>...Multiculturalism isn't all bad,eh? </p>
 
-<%= link_to "Home", restaurants_path %>
+  <h2>Reviews for <%= @restaurant.name %></h2>
+  <ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <%= review.content %>,
+        <%= review.rating %> Stars
+      </li>
+    <% end %>
+  </ul>
+
+<%= link_to "Home", restaurants_path, class: "btn btn-primary" %>
+
+<%= link_to "Write a review for this restaurant", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+</div>
