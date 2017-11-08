@@ -1,0 +1,12 @@
+<%= render "navbar.html.erb" %>
+
+<h1>This be your pad</h1>
+
+<%= @restaurant.name %>
+
+<p>Located over here: <%= @restaurant.address %></p>
+
+
+<p>Multi culturalism isn't all bad,eh? <%= @restaurant.category %></p>
+
+<%= link_to "Home", restaurants_path %>

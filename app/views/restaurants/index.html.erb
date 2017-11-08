@@ -1,0 +1,10 @@
+<%= render "layouts/navbar.html.erb" %>
+
+<h1>And the geeks shall inherit the earth</h1>
+
+
+<ul>
+<% @restaurants.each do |restaurant| %>
+  <li> <%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+<% end %>
+</ul>
